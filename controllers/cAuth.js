@@ -45,17 +45,17 @@ const login = async (req, res, next) => {
     }
 
     const token = generateToken(user, 200, res);
-    console.log('Token', token)
 
-    res.cookie("token", token, {
-      domain: 'notion-form-client.vercel.app',
-      sameSite: 'none',
-      secure: true,
-    });
+    // res.cookie("token", token, {
+    //   domain: 'notion-form-client.vercel.app',
+    //   sameSite: 'none',
+    //   secure: true,
+    // });
 
     res.status(200).json({
       success: true,
       name,
+      token,
     });
   } catch (error) {
     next(error);
