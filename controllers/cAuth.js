@@ -45,6 +45,7 @@ const login = async (req, res, next) => {
     }
 
     const token = generateToken(user, 200, res);
+    console.log('Token', token)
 
     res.cookie("token", token, {
       secure: true,
