@@ -48,6 +48,7 @@ const login = async (req, res, next) => {
     console.log('Token', token)
 
     res.cookie("token", token, {
+      domain: 'notion-form-client.vercel.app',
       sameSite: 'none',
       secure: true,
     });
