@@ -48,6 +48,7 @@ const login = async (req, res, next) => {
     console.log('Token', token)
 
     res.cookie("token", token, {
+      sameSite: 'none',
       secure: true,
     });
 
